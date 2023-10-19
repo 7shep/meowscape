@@ -1,25 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine;
 
-public class mainmenu : MonoBehaviour
+public class Mainmenu : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void PlayGame()
     {
-        
+        Debug.Log(SceneManager.GetActiveScene().buildIndex);
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    public void enterGame()
+    public void QuitGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
-
-    //Quits the game!
-    public void quitGame()
-    {
+        Debug.Log("Game has been quit.");
         Application.Quit();
     }
+
 }
