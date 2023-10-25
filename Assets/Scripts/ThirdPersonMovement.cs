@@ -5,6 +5,7 @@ using UnityEngine;
 public class ThirdPersonMovement : MonoBehaviour
 {
     public CharacterController controller;
+    public Transform cam;
 
     public float speed = 6f;
 
@@ -20,7 +21,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
         if (direction.magnitude >= 0.1f)
         {
-            float targetAngle = Mathf.Atan2(direction.magnitude, direction.z) * Mathf.Rad2Deg;
+            float targetAngle = Mathf.Atan2(direction.magnitude, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
 
