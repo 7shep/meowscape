@@ -38,6 +38,8 @@ public class ThirdPersonMovement : MonoBehaviour
                 xpManager.GainXP(xpAmount);
                 previousPosition = transform.position;
             }
+
+            Debug.Log(xpAmount);
         }
 
     }
