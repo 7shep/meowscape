@@ -40,6 +40,7 @@ public class ThirdPersonMovement : MonoBehaviour
             }
 
             Debug.Log(xpAmount);
+
         }
 
     }
