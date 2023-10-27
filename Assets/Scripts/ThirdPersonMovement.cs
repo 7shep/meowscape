@@ -39,7 +39,7 @@ public class ThirdPersonMovement : MonoBehaviour
                 previousPosition = transform.position;
             }
 
-            Debug.Log(xpAmount);
+            //Debug.Log(xpAmount);
 
         }
 
