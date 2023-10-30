@@ -6,11 +6,15 @@ public class ThirdPersonMovement : MonoBehaviour
 {
     public CharacterController controller;
     public Transform cam;
+    public XPManager xpManager;
 
     public float speed = 6f;
 
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
+    public float xpDistanceThreshold = 10.0f;  // Adjust the distance threshold as needed.
+    public int xpAmount = 10;  // Adjust the XP amount to your preference.
+    private Vector3 previousPosition;
 
     // Update is called once per frame
     void Update()
@@ -27,6 +31,16 @@ public class ThirdPersonMovement : MonoBehaviour
 
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(direction * speed * Time.deltaTime);
+
+            if (Vector3.Distance(transform.position, previousPosition) >= xpDistanceThreshold)
+            {
+                // Give the player XP using the XPManager
+                xpManager.GainXP(xpAmount);
+                previousPosition = transform.position;
+            }
+
+            //Debug.Log(xpAmount);
+
         }
 
     }
