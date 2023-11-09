@@ -6,42 +6,37 @@ public class ThirdPersonMovement : MonoBehaviour
 {
     public CharacterController controller;
     public Transform cam;
-    public XPManager xpManager;
-
     public float speed = 6f;
-
-    public float turnSmoothTime = 0.1f;
-    float turnSmoothVelocity;
-    public float xpDistanceThreshold = 10.0f;  // Adjust the distance threshold as needed.
-    public int xpAmount = 10;  // Adjust the XP amount to your preference.
-    private Vector3 previousPosition;
+    public float gravity = -9.81f;
+    public float jumpHeight = 1.0f;
+    public Transform groundCheck;
+    public float groundDistance = 0.4f;
+    public LayerMask groundMask;
+    bool isGrounded;
+    Vector3 velocity;
 
     // Update is called once per frame
     void Update()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
-        Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
-        if (direction.magnitude >= 0.1f)
+        if (isGrounded && velocity.y < 0)
         {
-            float targetAngle = Mathf.Atan2(direction.magnitude, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
-            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
-            transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
-
-            Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            controller.Move(direction * speed * Time.deltaTime);
-
-            if (Vector3.Distance(transform.position, previousPosition) >= xpDistanceThreshold)
-            {
-                // Give the player XP using the XPManager
-                xpManager.GainXP(xpAmount);
-                previousPosition = transform.position;
-            }
-
-            //Debug.Log(xpAmount);
-
+            velocity.y = -2f;
         }
 
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
+        Vector3 move = (cam.forward * vertical + cam.right * horizontal).normalized;
+
+        controller.Move(move * speed * Time.deltaTime);
+
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+        }
+
+        velocity.y += gravity * Time.deltaTime;
+        controller.Move(velocity * Time.deltaTime);
     }
 }
