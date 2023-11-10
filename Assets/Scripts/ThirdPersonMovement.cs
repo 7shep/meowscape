@@ -9,14 +9,13 @@ public class ThirdPersonMovement : MonoBehaviour
     public XPManager xpManager;
 
     public float speed = 6f;
-<<<<<<< Updated upstream
 
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
     public float xpDistanceThreshold = 10.0f;  // Adjust the distance threshold as needed.
     public int xpAmount = 10;  // Adjust the XP amount to your preference.
     private Vector3 previousPosition;
-=======
+
     public float gravity = -9.81f;
     public float jumpHeight = 1.0f;
     public Transform groundCheck;
@@ -25,7 +24,6 @@ public class ThirdPersonMovement : MonoBehaviour
     bool isGrounded;
     Vector3 velocity;
     public XPManager XpManager;
->>>>>>> Stashed changes
 
     // Update is called once per frame
     void Update()
