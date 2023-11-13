@@ -1,0 +1,4 @@
+repository "meowscape@ugdsbshep@cloud"
+  path "/"
+    br "/main"
+    co "/main"
