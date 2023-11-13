@@ -15,13 +15,6 @@ public class ThirdPersonMovement : MonoBehaviour
     bool isGrounded;
     Vector3 velocity;
 
-    public float gravity = -9.81f;
-    public float jumpHeight = 1.0f;
-    public Transform groundCheck;
-    public float groundDistance = 0.4f;
-    public LayerMask groundMask;
-    bool isGrounded;
-    Vector3 velocity;
     public XPManager XpManager;
 
     // Update is called once per frame
