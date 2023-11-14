@@ -15,6 +15,11 @@ public class PlayerStats : MonoBehaviour
     public StatsBar healthBar;
     public StatsBar manaBar;
 
+
+    [Header("Stats Depletion(test)")]
+    public float manaDepletion = 0.5f;
+
+
     private void Start()
     {
         health = maxHealth;
@@ -48,6 +53,9 @@ public class PlayerStats : MonoBehaviour
         if(mana >= maxMana)
             mana = maxMana;
 
-      
+
+        if (mana > 0)
+            mana -= manaDepletion * Time.deltaTime;
+
     }   
 }
