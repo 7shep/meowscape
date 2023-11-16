@@ -156,7 +156,7 @@ TerrainCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_ProvidesContacts: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 2
   m_TerrainData: {fileID: 15600000, guid: abd9fc8a29ea3f549bf82c3d3b8c843f, type: 2}
@@ -505,7 +505,7 @@ TerrainCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_ProvidesContacts: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 2
   m_TerrainData: {fileID: 15600000, guid: b273ce15435a60644bcd2c174476a708, type: 2}
@@ -743,7 +743,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 484585014}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.255222, y: -0.64159983, z: 0.24593994, w: 0.6802389}
+  m_LocalRotation: {x: 0.24387473, y: 0.5179216, z: -0.1354123, w: 0.80866915}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1153,29 +1153,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7e343c794930c384da9d42c32a12a866, type: 3}
   m_PrefabInstance: {fileID: 1385964666}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &766653432
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 766653431}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d48bf103897603e47b25cd4ba09b8521, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controller: {fileID: 766653436}
-  cam: {fileID: 1450964112}
-  speed: 6
-  gravity: -9.81
-  jumpHeight: 1
-  groundCheck: {fileID: 894822543}
-  groundDistance: -2
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 128
-  XpManager: {fileID: 0}
 --- !u!4 &766653435 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7e343c794930c384da9d42c32a12a866, type: 3}
@@ -1200,32 +1177,13 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 24.549976
+  m_Height: 4
   m_Radius: 36.79149
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &766653439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 766653431}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e8f510007792b6469afea7149f72f14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 0
-  maxHealth: 100
-  mana: 0
-  maxMana: 100
-  healthBar: {fileID: 169821871}
-  manaBar: {fileID: 1913097477}
-  manaDepletion: 0.5
 --- !u!54 &766653440
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1250,9 +1208,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 1
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 1
 --- !u!64 &766653443
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1270,11 +1228,66 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 1
-  m_CookingOptions: 30
+  m_CookingOptions: -1
   m_Mesh: {fileID: 3669258589346456565, guid: 7e343c794930c384da9d42c32a12a866, type: 3}
+--- !u!114 &766653444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766653431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e8f510007792b6469afea7149f72f14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  maxHealth: 100
+  mana: 0
+  maxMana: 100
+  healthBar: {fileID: 169821871}
+  manaBar: {fileID: 1913097477}
+  manaDepletion: 0
+--- !u!114 &766653445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766653431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d48bf103897603e47b25cd4ba09b8521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 766653436}
+  cam: {fileID: 1450964112}
+  speed: 6
+  gravity: -9.81
+  jumpHeight: 1
+  groundCheck: {fileID: 894822543}
+  groundDistance: -1
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 1
+  XpManager: {fileID: 0}
+--- !u!114 &766653448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766653431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3172c107e8a30794e968b9096bf1d7e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxGroundDistance: 0.2
 --- !u!1 &843160805
 GameObject:
   m_ObjectHideFlags: 3
@@ -1300,7 +1313,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 843160805}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.23034392, y: -0.6501102, z: 0.2224716, w: 0.6890609}
+  m_LocalRotation: {x: 0.21433887, y: 0.52249867, z: -0.11650947, w: 0.8169942}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1498,7 +1511,7 @@ GameObject:
   m_Component:
   - component: {fileID: 894822543}
   m_Layer: 0
-  m_Name: Terrain
+  m_Name: TerrainGrouped
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1693,7 +1706,7 @@ TerrainCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_ProvidesContacts: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 2
   m_TerrainData: {fileID: 15600000, guid: d9f3564d21751d046890366f3fc55400, type: 2}
@@ -1777,7 +1790,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1108844328}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.24280663, y: -0.64596725, z: 0.23422891, w: 0.68476874}
+  m_LocalRotation: {x: 0.22912505, y: 0.520299, z: -0.12596919, w: 0.8129713}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1871,7 +1884,7 @@ TerrainCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_ProvidesContacts: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 2
   m_TerrainData: {fileID: 15600000, guid: e0829138c40f356458f259edb063d67a, type: 2}
@@ -2409,7 +2422,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7e343c794930c384da9d42c32a12a866, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4
+      value: 3.94
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7e343c794930c384da9d42c32a12a866, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2459,19 +2472,22 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7e343c794930c384da9d42c32a12a866, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 766653432}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7e343c794930c384da9d42c32a12a866, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 766653436}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7e343c794930c384da9d42c32a12a866, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 766653439}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7e343c794930c384da9d42c32a12a866, type: 3}
       insertIndex: -1
       addedObject: {fileID: 766653440}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7e343c794930c384da9d42c32a12a866, type: 3}
       insertIndex: -1
       addedObject: {fileID: 766653443}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7e343c794930c384da9d42c32a12a866, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 766653445}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7e343c794930c384da9d42c32a12a866, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 766653444}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7e343c794930c384da9d42c32a12a866, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 766653448}
   m_SourcePrefab: {fileID: 100100000, guid: 7e343c794930c384da9d42c32a12a866, type: 3}
 --- !u!1 &1435370488
 GameObject:
@@ -2688,8 +2704,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1450964108}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.217458, y: -0.6474098, z: 0.20042603, w: 0.7024258}
-  m_LocalPosition: {x: 29.920189, y: 6.18248, z: 66.282036}
+  m_LocalRotation: {x: 0.24788289, y: 0.5209756, z: -0.16128434, w: 0.8007034}
+  m_LocalPosition: {x: 24.332474, y: 6.1224794, z: 65.33533}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2785,7 +2801,7 @@ Transform:
   m_GameObject: {fileID: 1493961727}
   serializedVersion: 2
   m_LocalRotation: {x: 0.044613563, y: -0.95470494, z: -0.13211939, w: 0.26285473}
-  m_LocalPosition: {x: -94.40436, y: 112.34976, z: 118.36747}
+  m_LocalPosition: {x: 124.909546, y: 121.92475, z: 10.917094}
   m_LocalScale: {x: 25.934473, y: 36.71263, z: 24.14016}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3343,7 +3359,7 @@ TerrainCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_ProvidesContacts: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 2
   m_TerrainData: {fileID: 15600000, guid: c40d5572f8d7d6843bd8d20c21f1c0be, type: 2}
@@ -3435,7 +3451,7 @@ TerrainCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_ProvidesContacts: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 2
   m_TerrainData: {fileID: 15600000, guid: 3349f3f4495a62f40895e095545b535e, type: 2}
@@ -3527,7 +3543,7 @@ TerrainCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_ProvidesContacts: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 2
   m_TerrainData: {fileID: 15600000, guid: dbe8ee5abb1344a4e8a8b80348f13db8, type: 2}
@@ -3851,7 +3867,7 @@ TerrainCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_ProvidesContacts: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 2
   m_TerrainData: {fileID: 15600000, guid: 1587ce82db2499e4185b7701bf0d532b, type: 2}
@@ -3970,7 +3986,7 @@ TerrainCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_ProvidesContacts: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 2
   m_TerrainData: {fileID: 15600000, guid: f2e008cefb3ff674e8c681a3f961fb80, type: 2}
