@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
+    [Header("Player Stats")]
+    [Space]
     public float health;
     public float maxHealth = 100f;
     [Space]
@@ -12,6 +14,7 @@ public class PlayerStats : MonoBehaviour
     public float maxMana = 100f;
 
     [Header("UI")]
+    [Space]
     public StatsBar healthBar;
     public StatsBar manaBar;
 
@@ -55,7 +58,7 @@ public class PlayerStats : MonoBehaviour
 
 
         if (mana > 0)
-            mana -= manaDepletion * Time.deltaTime;
+          mana -= manaDepletion * Time.deltaTime;
 
     }   
 }
