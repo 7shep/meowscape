@@ -179,8 +179,22 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.33420056, y: 0.2859373, z: 0.35413405}
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: -0.002418138, y: 0.12496347, z: 0.0038491488}
+--- !u!114 &22798617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22798609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05bc8024754727e4c85bb1d69b242df7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerInRangeOfObject: 0
+  ItemName: Mushroom
 --- !u!1 &31482328 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c2dcabc4d03cc9b4098225e59529d20d, type: 3}
@@ -237,8 +251,22 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 3, y: 5, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &31482334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31482328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05bc8024754727e4c85bb1d69b242df7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerInRangeOfObject: 0
+  ItemName: Tree
 --- !u!1 &59547872
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,7 +572,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 3, y: 5, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &279504705
 Rigidbody:
@@ -573,6 +601,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &279504707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279504701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05bc8024754727e4c85bb1d69b242df7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerInRangeOfObject: 0
+  ItemName: Tree
 --- !u!1001 &333149449
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -651,6 +693,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2ec966d90911a454c9760fa28789a4f8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1422169748}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2ec966d90911a454c9760fa28789a4f8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1422169751}
   m_SourcePrefab: {fileID: 100100000, guid: 2ec966d90911a454c9760fa28789a4f8, type: 3}
 --- !u!1 &348962308
 GameObject:
@@ -810,6 +855,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c2dcabc4d03cc9b4098225e59529d20d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 401669643}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c2dcabc4d03cc9b4098225e59529d20d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 401669648}
     - targetCorrespondingSourceObject: {fileID: -3375704306057596607, guid: c2dcabc4d03cc9b4098225e59529d20d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 401669641}
@@ -957,8 +1005,22 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 3, y: 5, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &401669648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 401669638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05bc8024754727e4c85bb1d69b242df7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerInRangeOfObject: 0
+  ItemName: Tree
 --- !u!1 &402224876
 GameObject:
   m_ObjectHideFlags: 0
@@ -1169,8 +1231,22 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.33420056, y: 0.2859373, z: 0.35413405}
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: -0.0024219528, y: 0.12496347, z: 0.0038491488}
+--- !u!114 &457806866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457806858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05bc8024754727e4c85bb1d69b242df7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerInRangeOfObject: 0
+  ItemName: Mushroom
 --- !u!1 &484585014
 GameObject:
   m_ObjectHideFlags: 3
@@ -1524,7 +1600,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1596,6 +1672,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 545071354731874043, guid: 059eecd3f9d8f5148b36874da77673eb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 545054114}
+    - targetCorrespondingSourceObject: {fileID: 545071354731874043, guid: 059eecd3f9d8f5148b36874da77673eb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 545054117}
   m_SourcePrefab: {fileID: 100100000, guid: 059eecd3f9d8f5148b36874da77673eb, type: 3}
 --- !u!4 &545054112 stripped
 Transform:
@@ -1626,7 +1705,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 3, y: 5, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &545054115
 Rigidbody:
@@ -1655,6 +1734,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &545054117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545054113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05bc8024754727e4c85bb1d69b242df7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerInRangeOfObject: 0
+  ItemName: Tree
 --- !u!1 &578435112
 GameObject:
   m_ObjectHideFlags: 3
@@ -2088,7 +2181,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 843160805}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2143389, y: 0.52249867, z: -0.11650947, w: 0.8169942}
+  m_LocalRotation: {x: 0.21433887, y: 0.52249867, z: -0.11650947, w: 0.8169942}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3176,6 +3269,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2ec966d90911a454c9760fa28789a4f8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 22798614}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2ec966d90911a454c9760fa28789a4f8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 22798617}
   m_SourcePrefab: {fileID: 100100000, guid: 2ec966d90911a454c9760fa28789a4f8, type: 3}
 --- !u!1001 &1385964666
 PrefabInstance:
@@ -3330,8 +3426,22 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 3, y: 5, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1419463544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419463538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05bc8024754727e4c85bb1d69b242df7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerInRangeOfObject: 0
+  ItemName: Tree
 --- !u!1 &1422169743 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2ec966d90911a454c9760fa28789a4f8, type: 3}
@@ -3388,8 +3498,22 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.33420056, y: 0.2859373, z: 0.35413405}
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: -0.0024181418, y: 0.12496347, z: 0.0038491488}
+--- !u!114 &1422169751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422169743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05bc8024754727e4c85bb1d69b242df7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerInRangeOfObject: 0
+  ItemName: Mushroom
 --- !u!1 &1435370488
 GameObject:
   m_ObjectHideFlags: 0
@@ -3605,7 +3729,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1450964108}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2478829, y: 0.5209756, z: -0.16128434, w: 0.80070335}
+  m_LocalRotation: {x: 0.24788289, y: 0.5209756, z: -0.16128434, w: 0.8007034}
   m_LocalPosition: {x: 24.332474, y: 6.1224794, z: 65.33533}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3742,6 +3866,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c2dcabc4d03cc9b4098225e59529d20d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1490957927}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c2dcabc4d03cc9b4098225e59529d20d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1490957932}
     - targetCorrespondingSourceObject: {fileID: -3375704306057596607, guid: c2dcabc4d03cc9b4098225e59529d20d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1490957925}
@@ -3889,8 +4016,22 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 5, y: 5, z: 6}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1490957932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490957922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05bc8024754727e4c85bb1d69b242df7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerInRangeOfObject: 0
+  ItemName: Tree
 --- !u!1 &1493961727
 GameObject:
   m_ObjectHideFlags: 0
@@ -4104,6 +4245,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c2dcabc4d03cc9b4098225e59529d20d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1521255333}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c2dcabc4d03cc9b4098225e59529d20d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1521255338}
     - targetCorrespondingSourceObject: {fileID: -3375704306057596607, guid: c2dcabc4d03cc9b4098225e59529d20d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1521255331}
@@ -4251,8 +4395,22 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 3, y: 5, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1521255338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521255328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05bc8024754727e4c85bb1d69b242df7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerInRangeOfObject: 0
+  ItemName: Tree
 --- !u!1001 &1546470280
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4331,6 +4489,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2ec966d90911a454c9760fa28789a4f8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 457806863}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2ec966d90911a454c9760fa28789a4f8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 457806866}
   m_SourcePrefab: {fileID: 100100000, guid: 2ec966d90911a454c9760fa28789a4f8, type: 3}
 --- !u!1 &1557460763 stripped
 GameObject:
@@ -4433,6 +4594,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2ec966d90911a454c9760fa28789a4f8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1613260126}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2ec966d90911a454c9760fa28789a4f8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1613260129}
   m_SourcePrefab: {fileID: 100100000, guid: 2ec966d90911a454c9760fa28789a4f8, type: 3}
 --- !u!1 &1570689918
 GameObject:
@@ -4594,6 +4758,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c2dcabc4d03cc9b4098225e59529d20d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 31482332}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c2dcabc4d03cc9b4098225e59529d20d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 31482334}
     - targetCorrespondingSourceObject: {fileID: -3375704306057596607, guid: c2dcabc4d03cc9b4098225e59529d20d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 643287852}
@@ -4739,8 +4906,22 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.33420056, y: 0.2859373, z: 0.35413405}
+  m_Size: {x: 3, y: 5, z: 3}
   m_Center: {x: -0.002418138, y: 0.12496347, z: 0.0038491488}
+--- !u!114 &1613260129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613260121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05bc8024754727e4c85bb1d69b242df7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerInRangeOfObject: 0
+  ItemName: Mushroom
 --- !u!1 &1626380779
 GameObject:
   m_ObjectHideFlags: 0
@@ -5756,6 +5937,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 545071354731874043, guid: 059eecd3f9d8f5148b36874da77673eb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 279504704}
+    - targetCorrespondingSourceObject: {fileID: 545071354731874043, guid: 059eecd3f9d8f5148b36874da77673eb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 279504707}
   m_SourcePrefab: {fileID: 100100000, guid: 059eecd3f9d8f5148b36874da77673eb, type: 3}
 --- !u!1001 &1972450619465768533
 PrefabInstance:
@@ -5823,6 +6007,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1972450619528280241, guid: 62f6191494f161340b448c5f6a7f56d8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1419463542}
+    - targetCorrespondingSourceObject: {fileID: 1972450619528280241, guid: 62f6191494f161340b448c5f6a7f56d8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1419463544}
     - targetCorrespondingSourceObject: {fileID: 1972450619835780074, guid: 62f6191494f161340b448c5f6a7f56d8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1153591590}
