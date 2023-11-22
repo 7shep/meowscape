@@ -844,7 +844,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 406809422}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.09252102, y: -0.000000017659854, z: 0.0000000016409462, w: 0.99571073}
+  m_LocalRotation: {x: 0.09252102, y: 0.00000001765986, z: -0.0000000016409466, w: 0.99571073}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2336,7 +2336,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1236408725}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.04739872, y: -0.0046882452, z: 0.00022246939, w: 0.99886507}
+  m_LocalRotation: {x: 0.047398716, y: -0.0046881745, z: 0.00022246601, w: 0.99886507}
   m_LocalPosition: {x: -129.67561, y: -4.7078004, z: 169.07147}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3397,7 +3397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9674032954610894fbbaf910f50ccdd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0
+  moveSpeed: 1
   groundDrag: 0
   jumpForce: 0
   jumpCooldown: 0
@@ -3408,7 +3408,7 @@ MonoBehaviour:
   playerHeight: 0
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   orientation: {fileID: 0}
 --- !u!1 &1626380779
 GameObject:
@@ -3580,7 +3580,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1660981448}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.047398724, y: -0.004688228, z: 0.00022246854, w: 0.998865}
+  m_LocalRotation: {x: 0.04739872, y: -0.0046881926, z: 0.00022246683, w: 0.998865}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
