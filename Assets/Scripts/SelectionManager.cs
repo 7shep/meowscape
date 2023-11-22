@@ -23,7 +23,7 @@ public class SelectionManager : MonoBehaviour
         if (Physics.Raycast(ray,out hit))
         {
             var selectionTransform = hit.transform;
-            if(selectionTransform.GetComponent<InteractableObjects>() && selectionTransform.GetComponent<InteractableObjects>().PlayerInRangeOfObject)
+            if(selectionTransform.GetComponent<InteractableObjects>())
             {
                 interactionText.text = selectionTransform.GetComponent<InteractableObjects>().GetItemName();
                 interaction_Info_UI.SetActive(true);
