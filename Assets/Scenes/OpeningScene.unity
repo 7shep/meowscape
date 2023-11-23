@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.42226925, g: 0.6437075, b: 0.79366875, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1285,6 +1285,32 @@ MonoBehaviour:
   healthBar: {fileID: 169821871}
   manaBar: {fileID: 1913097477}
   manaDepletion: 0
+--- !u!143 &766653447
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766653431}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 24.54985
+  m_Radius: 36.791428
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &770636161
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2336,7 +2362,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1236408725}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.047398716, y: -0.0046881745, z: 0.00022246601, w: 0.99886507}
+  m_LocalRotation: {x: 0.04739872, y: -0.0046882452, z: 0.00022246939, w: 0.99886507}
   m_LocalPosition: {x: -129.67561, y: -4.7078004, z: 169.07147}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2451,7 +2477,7 @@ MonoBehaviour:
   orientation: {fileID: 1265623953}
   player: {fileID: 1604843881}
   playerObj: {fileID: 766653435}
-  rb: {fileID: 1604843880}
+  rb: {fileID: 0}
   rotationSpeed: 7
   combatLookAt: {fileID: 0}
   thirdPersonCam: {fileID: 0}
@@ -2758,6 +2784,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7e343c794930c384da9d42c32a12a866, type: 3}
       insertIndex: -1
       addedObject: {fileID: 766653444}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7e343c794930c384da9d42c32a12a866, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 766653447}
   m_SourcePrefab: {fileID: 100100000, guid: 7e343c794930c384da9d42c32a12a866, type: 3}
 --- !u!1 &1435370488
 GameObject:
@@ -3331,7 +3360,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1604843881}
-  - component: {fileID: 1604843880}
   - component: {fileID: 1604843882}
   m_Layer: 0
   m_Name: Player
@@ -3340,33 +3368,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &1604843880
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1604843879}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 1
-  m_Constraints: 0
-  m_CollisionDetection: 1
 --- !u!4 &1604843881
 Transform:
   m_ObjectHideFlags: 0
@@ -3394,22 +3395,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1604843879}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9674032954610894fbbaf910f50ccdd7, type: 3}
+  m_Script: {fileID: 11500000, guid: 8f5721f45a4372242a249d3bb70958a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
-  groundDrag: 0
-  jumpForce: 0
-  jumpCooldown: 0
-  airMultiplier: 0
-  walkSpeed: 0
-  sprintSpeed: 0
-  jumpKey: 32
-  playerHeight: 0
-  whatIsGround:
+  controller: {fileID: 766653447}
+  speed: 5
+  gravity: -9.18
+  jumpHeight: 0
+  groundCheck: {fileID: 1143006926}
+  groundDistance: 0
+  groundMask:
     serializedVersion: 2
-    m_Bits: 8
-  orientation: {fileID: 0}
+    m_Bits: 0
 --- !u!1 &1626380779
 GameObject:
   m_ObjectHideFlags: 0
@@ -3580,7 +3577,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1660981448}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.04739872, y: -0.0046881926, z: 0.00022246683, w: 0.998865}
+  m_LocalRotation: {x: 0.047398724, y: -0.004688228, z: 0.00022246854, w: 0.998865}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
