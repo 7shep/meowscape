@@ -7,9 +7,7 @@ public class PlayerMovementAdvanced : MonoBehaviour
 {
     [Header("Movement")]
     public float moveSpeed;
-
     public float groundDrag;
-
     public float jumpForce;
     public float jumpCooldown;
     public float airMultiplier;
@@ -41,6 +39,8 @@ public class PlayerMovementAdvanced : MonoBehaviour
         rb.freezeRotation = true;
 
         readyToJump = true;
+
+
     }
 
     private void Update()
@@ -72,17 +72,23 @@ public class PlayerMovementAdvanced : MonoBehaviour
         if (Input.GetKey(jumpKey) && readyToJump && grounded)
         {
             readyToJump = false;
-
             Jump();
-
             Invoke(nameof(ResetJump), jumpCooldown);
         }
     }
 
     private void MovePlayer()
     {
-        // calculate movement direction
-        moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+        Vector3 camForward = Camera.main.transform.forward;
+        Vector3 camRight = Camera.main.transform.right;
+
+        // Project camera's forward and right vectors onto the horizontal plane (Y = 0)
+        camForward.y = 0f;
+        camRight.y = 0f;
+        camForward = camForward.normalized;
+        camRight = camRight.normalized;
+
+        moveDirection = camForward * verticalInput + camRight * horizontalInput;
 
         // on ground
         if (grounded)
@@ -109,9 +115,9 @@ public class PlayerMovementAdvanced : MonoBehaviour
     {
         // reset y velocity
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
-
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
     }
+
     private void ResetJump()
     {
         readyToJump = true;
