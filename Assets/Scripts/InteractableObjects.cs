@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InteractableObjects : MonoBehaviour
 {
-    public bool PlayerInRangeOfObject;
+    private bool PlayerInRangeOfObject;
     public string ItemName;
 
     public string GetItemName()
