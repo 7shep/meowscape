@@ -2,31 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractableObjects : MonoBehaviour
+public class InteractableObject : MonoBehaviour
 {
-    private bool PlayerInRangeOfObject;
     public string ItemName;
 
     public string GetItemName()
     {
+       // Debug.Log(ItemName);
         return ItemName;
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-
-        if (other.CompareTag("Player"))
-        {
-            PlayerInRangeOfObject = true;
-        }
-
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            PlayerInRangeOfObject= false;
-        }
+        
     }
 }

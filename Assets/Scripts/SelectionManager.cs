@@ -1,41 +1,46 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class SelectionManager : MonoBehaviour
 {
 
     public GameObject interaction_Info_UI;
-    Text interactionText;
+    Text interaction_text;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        interactionText = interaction_Info_UI.GetComponent<Text>();
+        if (interaction_Info_UI != null)
+        {
+            interaction_text = interaction_Info_UI.GetComponent<Text>();
+            if (interaction_text == null)
+            {
+                Debug.LogError("Text component not found on interaction_Info_UI GameObject!");
+            }
+        }
+        else
+        {
+            Debug.LogError("interaction_Info_UI reference is not set!");
+        }
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        if (Physics.Raycast(ray,out hit))
+        if (Physics.Raycast(ray, out hit))
         {
             var selectionTransform = hit.transform;
-            if(selectionTransform.GetComponent<InteractableObjects>())
+
+            if (selectionTransform.GetComponent<InteractableObject>())
             {
-                interactionText.text = selectionTransform.GetComponent<InteractableObjects>().GetItemName();
+                interaction_text.text = selectionTransform.GetComponent<InteractableObject>().GetItemName();
                 interaction_Info_UI.SetActive(true);
             }
-            else // If there is a hit, but w/o an interactable script
+            else
             {
                 interaction_Info_UI.SetActive(false);
             }
-        }
-        else // no hit at all!
-        {
-            interaction_Info_UI.SetActive(false);
+
         }
     }
 }
