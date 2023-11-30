@@ -365,6 +365,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &162063090 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c2dcabc4d03cc9b4098225e59529d20d, type: 3}
+  m_PrefabInstance: {fileID: 1590409431}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &169821869
 GameObject:
   m_ObjectHideFlags: 0
@@ -862,6 +867,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c2dcabc4d03cc9b4098225e59529d20d, type: 3}
   m_PrefabInstance: {fileID: 1590409431}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &363393731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162063090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05bc8024754727e4c85bb1d69b242df7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemName: Tree
 --- !u!1 &402224876
 GameObject:
   m_ObjectHideFlags: 0
@@ -1700,7 +1718,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05bc8024754727e4c85bb1d69b242df7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemName: Fruit Tree
+  ItemName: Tree
 --- !u!1 &766653431 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7e343c794930c384da9d42c32a12a866, type: 3}
@@ -1823,7 +1841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05bc8024754727e4c85bb1d69b242df7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemName: Fruit Tree
+  ItemName: Tree
 --- !u!1 &894822542
 GameObject:
   m_ObjectHideFlags: 0
@@ -2897,7 +2915,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1236408725}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.04763198, y: 0.0000000021483566, z: -1.02446746e-10, w: 0.99886495}
+  m_LocalRotation: {x: 0.04763198, y: -0.0000000021483566, z: 1.02446746e-10, w: 0.99886495}
   m_LocalPosition: {x: -129.67561, y: -4.8078003, z: 169.07147}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3897,6 +3915,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c2dcabc4d03cc9b4098225e59529d20d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 363393731}
     - targetCorrespondingSourceObject: {fileID: -3375704306057596607, guid: c2dcabc4d03cc9b4098225e59529d20d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 643287852}
@@ -4246,7 +4267,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1660981448}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.047631975, y: 0.0000000021483564, z: -1.02446746e-10, w: 0.99886495}
+  m_LocalRotation: {x: 0.047631975, y: -0.0000000021483564, z: 1.02446746e-10, w: 0.99886495}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
