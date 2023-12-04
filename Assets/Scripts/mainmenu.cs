@@ -1,5 +1,7 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class Mainmenu : MonoBehaviour
 {
@@ -15,5 +17,9 @@ public class Mainmenu : MonoBehaviour
         Debug.Log("Game has been quit.");
         Application.Quit();
     }
-
+    
+    public void SettingsScreen()
+    {
+        SceneManager.LoadScene("Settings");
+    }
 }
