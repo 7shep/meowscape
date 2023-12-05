@@ -29,6 +29,9 @@ public class PlayerMovementAdvanced : MonoBehaviour
     float horizontalInput;
     float verticalInput;
 
+    [Header("For Interaction")]
+    public Camera Camera;
+
     Vector3 moveDirection;
 
     Rigidbody rb;
@@ -56,6 +59,18 @@ public class PlayerMovementAdvanced : MonoBehaviour
             rb.drag = groundDrag;
         else
             rb.drag = 0;
+
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Ray ray = Camera.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, 100))
+            {
+                Debug.Log("Hit");
+            }
+        }
     }
 
     private void FixedUpdate()
