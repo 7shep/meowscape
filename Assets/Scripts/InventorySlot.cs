@@ -1,18 +1,25 @@
 using UnityEngine;
-using static UnityEditor.Progress;
 using UnityEngine.UI;
 
 public class InventorySlot : MonoBehaviour
 {
     public Image icon;
 
-    Item item;
+    InventorySlot item;
 
-    public void AddItem(Item newItem)
+    public void AddItem(InventorySlot newItem)
     {
         item = newItem;
 
-        icon.sprite = item.icon;
+
+        icon.sprite = newItem.icon.sprite; 
         icon.enabled = true;
+    }
+
+    public void ClearSlot()
+    {
+        item = null;
+        icon.sprite = null;
+        icon.enabled = false;
     }
 }

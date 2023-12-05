@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class InteractableObject : MonoBehaviour
@@ -8,8 +6,18 @@ public class InteractableObject : MonoBehaviour
 
     public string GetItemName()
     {
-       // Debug.Log(ItemName);
+
         return ItemName;
         
+    }
+
+    public float radius = 3f;
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.magenta;
+        Gizmos.DrawWireSphere(transform.position, radius);
+         
+
     }
 }
