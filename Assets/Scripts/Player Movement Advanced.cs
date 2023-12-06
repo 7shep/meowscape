@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Experimental.Rendering;
 
 public class PlayerMovementAdvanced : MonoBehaviour
 {
@@ -12,6 +13,10 @@ public class PlayerMovementAdvanced : MonoBehaviour
     public float jumpCooldown;
     public float airMultiplier;
     bool readyToJump;
+
+
+    public InteractableObject interactableObject; // Reference variable for InteractableObject
+
 
     [HideInInspector] public float walkSpeed;
     [HideInInspector] public float sprintSpeed;
@@ -31,6 +36,7 @@ public class PlayerMovementAdvanced : MonoBehaviour
 
     [Header("For Interaction")]
     public Camera Camera;
+    public InteractableObject focus;
 
     Vector3 moveDirection;
 
@@ -68,9 +74,28 @@ public class PlayerMovementAdvanced : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, 100))
             {
-                Debug.Log("Hit");
+                InteractableObject interactableObject = hit.collider.GetComponent<InteractableObject>();
+
+                RemoveFocus();
+
+                if (interactableObject != null)
+                {
+                    Debug.Log("Hit"); // Log "Hit" to the console for InteractableObject
+                    SetFocus(interactableObject);
+                }
             }
         }
+
+    }
+
+    void SetFocus(InteractableObject newFocus)
+    {
+        focus = newFocus;
+    }
+
+    void RemoveFocus()
+    {
+        focus = null;
     }
 
     private void FixedUpdate()
