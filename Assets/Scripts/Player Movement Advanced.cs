@@ -91,6 +91,7 @@ public class PlayerMovementAdvanced : MonoBehaviour
     void SetFocus(InteractableObject newFocus)
     {
         focus = newFocus;
+        interactableObject.FocusFromPlayer(newFocus);
     }
 
     void RemoveFocus()
@@ -107,6 +108,7 @@ public class PlayerMovementAdvanced : MonoBehaviour
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
+
 
         // when to jump
         if (Input.GetKey(jumpKey) && readyToJump && grounded)

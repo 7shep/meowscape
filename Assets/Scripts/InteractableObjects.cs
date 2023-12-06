@@ -20,6 +20,9 @@ public class InteractableObject : MonoBehaviour
     Transform player;
 
     bool hasInteracted = false;
+    public int objectHealth;
+
+    public Transform focusTransform;
 
     //meow
 
@@ -52,7 +55,7 @@ public class InteractableObject : MonoBehaviour
     }
 
     // This method is meant to be overwritten
-    public virtual void Interact()
+    public void Interact()
     {
 
     }
@@ -66,4 +69,16 @@ public class InteractableObject : MonoBehaviour
          
 
     }
+
+    public void FocusFromPlayer(InteractableObject newFocus)
+    {
+        focusTransform = newFocus.transform;
+    }
+
+    void EverGrowingTree(focusTransform objectHealth)
+    {
+
+    }
+
 }
+
