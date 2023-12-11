@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -70,15 +71,22 @@ public class InteractableObject : MonoBehaviour
 
     }
 
-    public void FocusFromPlayer(InteractableObject newFocus)
+    public void FocusFromPlayer(InteractableObject playerObject)
     {
-        focusTransform = newFocus.transform;
+        focusTransform = playerObject.transform;
+
+        if (playerObject != null )
+        {
+            Debug.Log(playerObject.ItemName);
+            Debug.Log("FocusFromPlayer");
+        }
     }
 
-    void EverGrowingTree(focusTransform objectHealth)
+    void EverGrowingTree(Transform objectHealth)
     {
-
+        Debug.Log("Evergrow");
     }
+
 
 }
 

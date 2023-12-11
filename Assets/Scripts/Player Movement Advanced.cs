@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Experimental.Rendering;
+using Unity.VisualScripting;
 
 public class PlayerMovementAdvanced : MonoBehaviour
 {
@@ -37,7 +38,6 @@ public class PlayerMovementAdvanced : MonoBehaviour
     [Header("For Interaction")]
     public Camera Camera;
     public InteractableObject focus;
-
     Vector3 moveDirection;
 
     Rigidbody rb;
@@ -48,7 +48,6 @@ public class PlayerMovementAdvanced : MonoBehaviour
         rb.freezeRotation = true;
 
         readyToJump = true;
-
 
     }
 
@@ -80,7 +79,8 @@ public class PlayerMovementAdvanced : MonoBehaviour
 
                 if (interactableObject != null)
                 {
-                    Debug.Log("Hit"); // Log "Hit" to the console for InteractableObject
+                    Debug.Log("Hit" + interactableObject); // Log "Hit" to the console for InteractableObject
+                    
                     SetFocus(interactableObject);
                 }
             }
@@ -90,9 +90,22 @@ public class PlayerMovementAdvanced : MonoBehaviour
 
     void SetFocus(InteractableObject newFocus)
     {
+        // Assign the newFocus parameter to the 'focus' variable
         focus = newFocus;
-        interactableObject.FocusFromPlayer(newFocus);
+
+        // Check if 'interactableObject' is not null (assuming 'interactableObject' is another reference)
+        if (interactableObject != null)
+        {
+            // Call the 'FocusFromPlayer' method of the 'focus' object
+            // Pass 'interactableObject' as an argument to 'FocusFromPlayer'
+            focus.FocusFromPlayer(interactableObject);
+
+            // Log a message to indicate that the interaction is being sent
+            Debug.Log("Sending");
+        }
     }
+
+
 
     void RemoveFocus()
     {
