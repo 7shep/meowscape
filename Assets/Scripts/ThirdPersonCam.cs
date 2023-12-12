@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ThirdPersonCam : MonoBehaviour
 {
@@ -26,10 +25,15 @@ public class ThirdPersonCam : MonoBehaviour
         Topdown
     }
 
+    public Slider rotationSpeedSlider; // Reference to the slider in the UI
+
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        // Add listener for when the value of the slider changes
+        rotationSpeedSlider.onValueChanged.AddListener(ChangeRotationSpeed);
     }
 
     private void Update()
@@ -43,7 +47,7 @@ public class ThirdPersonCam : MonoBehaviour
         Vector3 viewDir = player.position - new Vector3(transform.position.x, player.position.y, transform.position.z);
         orientation.forward = viewDir.normalized;
 
-        // roate player object
+        // rotate player object
         if (currentStyle == CameraStyle.Basic || currentStyle == CameraStyle.Topdown)
         {
             float horizontalInput = Input.GetAxis("Horizontal");
@@ -53,7 +57,6 @@ public class ThirdPersonCam : MonoBehaviour
             if (inputDir != Vector3.zero)
                 playerObj.forward = Vector3.Slerp(playerObj.forward, inputDir.normalized, Time.deltaTime * rotationSpeed);
         }
-
         else if (currentStyle == CameraStyle.Combat)
         {
             Vector3 dirToCombatLookAt = combatLookAt.position - new Vector3(transform.position.x, combatLookAt.position.y, transform.position.z);
@@ -74,5 +77,11 @@ public class ThirdPersonCam : MonoBehaviour
         if (newStyle == CameraStyle.Topdown) topDownCam.SetActive(true);
 
         currentStyle = newStyle;
+    }
+
+    // Method to change the rotation speed based on the slider value
+    private void ChangeRotationSpeed(float newValue)
+    {
+        rotationSpeed = newValue; // Assign the slider value to the rotationSpeed variable
     }
 }
