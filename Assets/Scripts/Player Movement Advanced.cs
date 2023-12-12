@@ -79,9 +79,10 @@ public class PlayerMovementAdvanced : MonoBehaviour
 
                 if (interactableObject != null)
                 {
-                    Debug.Log("Hit" + interactableObject); // Log "Hit" to the console for InteractableObject
+                    Debug.Log("Hit " + interactableObject); // Log "Hit" to the console for InteractableObject
                     
                     SetFocus(interactableObject);
+                    focus.FocusFromPlayer(interactableObject);
                 }
             }
         }
@@ -98,7 +99,6 @@ public class PlayerMovementAdvanced : MonoBehaviour
         {
             // Call the 'FocusFromPlayer' method of the 'focus' object
             // Pass 'interactableObject' as an argument to 'FocusFromPlayer'
-            focus.FocusFromPlayer(interactableObject);
 
             // Log a message to indicate that the interaction is being sent
             Debug.Log("Sending");
