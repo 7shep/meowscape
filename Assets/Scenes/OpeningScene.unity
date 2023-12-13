@@ -176,7 +176,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 15472298}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05bc8024754727e4c85bb1d69b242df7, type: 3}
   m_Name: 
@@ -186,9 +186,10 @@ MonoBehaviour:
   ObjectHealth: 0
   radius: 3
   interactionTransform: {fileID: 0}
-  objectHealth: 0
   interactableObject: {fileID: 0}
   focusTransform: {fileID: 0}
+  respawnObject: {fileID: 0}
+  originalObject: {fileID: 0}
 --- !u!114 &15472303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1186,6 +1187,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Evergrowing Tree
       objectReference: {fileID: 0}
+    - target: {fileID: 1972450619528280241, guid: 62f6191494f161340b448c5f6a7f56d8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1972450619528280243, guid: 62f6191494f161340b448c5f6a7f56d8, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1857,7 +1862,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 162063090}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05bc8024754727e4c85bb1d69b242df7, type: 3}
   m_Name: 
@@ -1867,9 +1872,10 @@ MonoBehaviour:
   ObjectHealth: 0
   radius: 3
   interactionTransform: {fileID: 0}
-  objectHealth: 0
   interactableObject: {fileID: 0}
   focusTransform: {fileID: 0}
+  respawnObject: {fileID: 0}
+  originalObject: {fileID: 0}
 --- !u!1 &375577624
 GameObject:
   m_ObjectHideFlags: 0
@@ -2212,7 +2218,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 406809422}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.09252102, y: 0.00000001765986, z: -0.0000000016409466, w: 0.99571073}
+  m_LocalRotation: {x: 0.09252102, y: -0.000000017659854, z: 0.0000000016409462, w: 0.99571073}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3167,7 +3173,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 751754978}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05bc8024754727e4c85bb1d69b242df7, type: 3}
   m_Name: 
@@ -3177,9 +3183,10 @@ MonoBehaviour:
   ObjectHealth: 0
   radius: 3
   interactionTransform: {fileID: 0}
-  objectHealth: 0
   interactableObject: {fileID: 0}
   focusTransform: {fileID: 0}
+  respawnObject: {fileID: 0}
+  originalObject: {fileID: 0}
 --- !u!1 &762837747
 GameObject:
   m_ObjectHideFlags: 0
@@ -3550,7 +3557,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 859375529}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05bc8024754727e4c85bb1d69b242df7, type: 3}
   m_Name: 
@@ -3560,9 +3567,10 @@ MonoBehaviour:
   ObjectHealth: 0
   radius: 3
   interactionTransform: {fileID: 0}
-  objectHealth: 0
   interactableObject: {fileID: 0}
   focusTransform: {fileID: 0}
+  respawnObject: {fileID: 0}
+  originalObject: {fileID: 0}
 --- !u!114 &859375534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3592,7 +3600,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 888019848}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05bc8024754727e4c85bb1d69b242df7, type: 3}
   m_Name: 
@@ -3602,9 +3610,10 @@ MonoBehaviour:
   ObjectHealth: 0
   radius: 3
   interactionTransform: {fileID: 0}
-  objectHealth: 0
   interactableObject: {fileID: 0}
   focusTransform: {fileID: 0}
+  respawnObject: {fileID: 0}
+  originalObject: {fileID: 0}
 --- !u!1 &894822542
 GameObject:
   m_ObjectHideFlags: 0
@@ -3669,12 +3678,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: Evergrowing Tree
   Description: infinite
-  ObjectHealth: 0
+  ObjectHealth: 10
   radius: 3
   interactionTransform: {fileID: 0}
-  objectHealth: 60
   interactableObject: {fileID: 0}
   focusTransform: {fileID: 0}
+  respawnObject: {fileID: 921330944}
+  originalObject: {fileID: 921330944}
 --- !u!64 &921330948
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5365,7 +5375,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1236408725}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.04763198, y: 0.0000000021483566, z: -1.02446746e-10, w: 0.99886495}
+  m_LocalRotation: {x: 0.04763198, y: -0.0000000021483566, z: 1.02446746e-10, w: 0.99886495}
   m_LocalPosition: {x: -129.67561, y: -4.8078003, z: 169.07147}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5729,7 +5739,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1291307152}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05bc8024754727e4c85bb1d69b242df7, type: 3}
   m_Name: 
@@ -5739,9 +5749,10 @@ MonoBehaviour:
   ObjectHealth: 0
   radius: 3
   interactionTransform: {fileID: 0}
-  objectHealth: 0
   interactableObject: {fileID: 0}
   focusTransform: {fileID: 0}
+  respawnObject: {fileID: 0}
+  originalObject: {fileID: 0}
 --- !u!114 &1291307157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5807,7 +5818,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1316790565}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05bc8024754727e4c85bb1d69b242df7, type: 3}
   m_Name: 
@@ -5817,9 +5828,10 @@ MonoBehaviour:
   ObjectHealth: 0
   radius: 3
   interactionTransform: {fileID: 0}
-  objectHealth: 0
   interactableObject: {fileID: 0}
   focusTransform: {fileID: 0}
+  respawnObject: {fileID: 0}
+  originalObject: {fileID: 0}
 --- !u!114 &1316790570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7712,7 +7724,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1660981448}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.047631975, y: 0.0000000021483564, z: -1.02446746e-10, w: 0.99886495}
+  m_LocalRotation: {x: 0.047631975, y: -0.0000000021483564, z: 1.02446746e-10, w: 0.99886495}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -9008,7 +9020,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2047735650}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05bc8024754727e4c85bb1d69b242df7, type: 3}
   m_Name: 
@@ -9018,9 +9030,10 @@ MonoBehaviour:
   ObjectHealth: 0
   radius: 3
   interactionTransform: {fileID: 0}
-  objectHealth: 0
   interactableObject: {fileID: 0}
   focusTransform: {fileID: 0}
+  respawnObject: {fileID: 0}
+  originalObject: {fileID: 0}
 --- !u!114 &2047735659
 MonoBehaviour:
   m_ObjectHideFlags: 0

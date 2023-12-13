@@ -2,6 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using System.Collections;
 using UnityEngine.AI;
+using UnityEditor.Rendering;
 
 
 public class InteractableObject : MonoBehaviour
@@ -25,8 +26,10 @@ public class InteractableObject : MonoBehaviour
 
     public Transform focusTransform;
 
-    Vector3 initialPosition; // For destroying the tree
-    public GameObject respawnPrefab; // Assign the prefab in the Inspector
+    Vector3 initialPosition; // Gets the objects position.
+    public GameObject respawnObject; // Assign the prefab in the Inspector
+    bool isActive = true;
+    public GameObject originalObject;
 
 
     //meow
@@ -34,6 +37,7 @@ public class InteractableObject : MonoBehaviour
     private void Start()
     {
         initialPosition = transform.position; // Store the initial position of the object
+        //Instantiate(respawnObject);
     }
 
     void Update()
@@ -87,7 +91,6 @@ public class InteractableObject : MonoBehaviour
         Gizmos.color = Color.magenta;
         Gizmos.DrawWireSphere(transform.position, radius);
          
-
     }
 
     public void FocusFromPlayer(InteractableObject playerObject)
@@ -102,7 +105,8 @@ public class InteractableObject : MonoBehaviour
         }
     }
 
-    public void EverGrowingTree(InteractableObject playerObject)
+    public void EverGrowingTree(InteractableObject playerObject
+        )
     {
         if (playerObject.Description == "infinite")
         {
@@ -112,8 +116,14 @@ public class InteractableObject : MonoBehaviour
 
             if (ObjectHealth <= 0)
             {
-                Destroy(gameObject); // Destroy the game object itself
-                StartCoroutine(RespawnObjectAfterDelay(5f)); // Start coroutine to respawn after 5 seconds (for testing)
+                //Destroy(respawnObject); // Destroy the newly instantiated object
+                StartCoroutine(TestSeconds(5f));
+                if (isActive)
+                {
+                    isActive = false;
+                    //Debug.Log("No longer active");
+                    //DestroyImmediate(originalObject, true);
+                }
             }
         }
         else
@@ -122,16 +132,23 @@ public class InteractableObject : MonoBehaviour
         }
     }
 
-    IEnumerator RespawnObjectAfterDelay(float delay)
+
+    public void RespawnTree()
     {
-        Debug.Log("Respawn coroutine started");
+        originalObject.SetActive(false);
+
+    }
+
+    IEnumerator TestSeconds(float delay)
+    {
+        Debug.Log("Started");
+        originalObject.SetActive(false);
+
         yield return new WaitForSeconds(delay);
 
-        // Respawn a new object after the delay using a prefab at the initial position
-        GameObject newObject = Instantiate(respawnPrefab, initialPosition, Quaternion.identity);
-        newObject.SetActive(true); // Activate the newly spawned object
-
-        Debug.Log("Object respawned");
+        respawnObject.SetActive(true);
+        ObjectHealth = 100;
+        Debug.Log("Finished");
     }
 
 
