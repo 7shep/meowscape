@@ -117,7 +117,7 @@ public class InteractableObject : MonoBehaviour
             if (ObjectHealth <= 0)
             {
                 //Destroy(respawnObject); // Destroy the newly instantiated object
-                StartCoroutine(TestSeconds(5f));
+                StartCoroutine(TestSeconds(1f));
                 if (isActive)
                 {
                     isActive = false;
@@ -133,22 +133,28 @@ public class InteractableObject : MonoBehaviour
     }
 
 
-    public void RespawnTree()
+    IEnumerator DelayedDestroy(float delay)
     {
-        originalObject.SetActive(false);
-
+        yield return new WaitForSeconds(delay);
+        Destroy(originalObject);
     }
 
+    // Within your existing coroutine
     IEnumerator TestSeconds(float delay)
     {
         Debug.Log("Started");
-        originalObject.SetActive(false);
+
+        StartCoroutine(DelayedDestroy(2f));
 
         yield return new WaitForSeconds(delay);
 
-        respawnObject.SetActive(true);
+        Debug.Log("Middle");
+        Instantiate(respawnObject, transform.position, Quaternion.identity);
         ObjectHealth = 100;
         Debug.Log("Finished");
+
+        // Destroy the original object after the delay
+        StartCoroutine(DelayedDestroy(delay));
     }
 
 
