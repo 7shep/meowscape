@@ -31,6 +31,8 @@ public class InteractableObject : MonoBehaviour
     bool isActive = true;
     public GameObject originalObject;
 
+    public XPManager xpManager;
+
 
     //meow
 
@@ -105,9 +107,23 @@ public class InteractableObject : MonoBehaviour
         }
     }
 
-    public void EverGrowingTree(InteractableObject playerObject
-        )
+    public void EverGrowingTree(InteractableObject playerObject)
     {
+        // Check if the playerObject is null
+        if (playerObject == null)
+        {
+            Debug.LogError("playerObject is null in EverGrowingTree");
+            return; // Exit the method if playerObject is null
+        }
+
+        // Check if the Description property on playerObject is null
+        if (playerObject.Description == null)
+        {
+            Debug.LogError("Description on playerObject is null in EverGrowingTree");
+            return; // Exit the method if Description is null
+        }
+
+        // Now that we've ensured playerObject and its Description are not null, we can safely continue
         if (playerObject.Description == "infinite")
         {
             Debug.Log("Tree Damaged");
@@ -116,13 +132,20 @@ public class InteractableObject : MonoBehaviour
 
             if (ObjectHealth <= 0)
             {
-                //Destroy(respawnObject); // Destroy the newly instantiated object
+                // Check if xpManager is null
+                if (xpManager == null)
+                {
+                    Debug.LogError("xpManager is not set in EverGrowingTree");
+                    return; // Exit the method if xpManager is null
+                }
+
+                xpManager.Instance.GainXP(35); // Call GainXP method
                 StartCoroutine(TestSeconds(1f));
+
                 if (isActive)
                 {
                     isActive = false;
-                    //Debug.Log("No longer active");
-                    //DestroyImmediate(originalObject, true);
+                    // DestroyImmediate(originalObject, true); // Uncomment if needed
                 }
             }
         }
@@ -144,17 +167,19 @@ public class InteractableObject : MonoBehaviour
     {
         Debug.Log("Started");
 
-        StartCoroutine(DelayedDestroy(2f));
+        //StartCoroutine(DelayedDestroy(2f));
+
+        Destroy(originalObject);
 
         yield return new WaitForSeconds(delay);
-
-        Debug.Log("Middle");
+        
+        //Debug.Log("Middle");
         Instantiate(respawnObject, transform.position, Quaternion.identity);
         ObjectHealth = 100;
         Debug.Log("Finished");
 
         // Destroy the original object after the delay
-        StartCoroutine(DelayedDestroy(delay));
+        //sStartCoroutine(DelayedDestroy(delay));
     }
 
 

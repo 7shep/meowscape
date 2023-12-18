@@ -2,13 +2,20 @@ using UnityEngine;
 
 public class XPManager : MonoBehaviour
 {
-    public int currentXP = 0;
-    public int targetXP = 100;
-    public int playerLevel = 1;
+    [Header("Global")]
+    public int targetXP = 100; // Target XP for level One
+    [Space]
+    [Header("Woodcutting")]
+    public int woodcuttingXP = 0;
+    public int woodcuttingLevel = 1;
+    [Space]
+    public int explorationXP = 0;
+    public int explorationLevel = 1;
+
 
     private void Update()
     {
-        if (currentXP >= targetXP)
+        if (woodcuttingXP >= targetXP)
         {
             LevelUp();
         }
@@ -16,15 +23,17 @@ public class XPManager : MonoBehaviour
 
     public void GainXP(int xpAmount)
     {
-        currentXP += xpAmount;
+        Debug.Log("DuringXP");
+        woodcuttingXP += xpAmount;
+        
     }
 
     void LevelUp()
     {
-        playerLevel++;
-        currentXP -= targetXP;
+        woodcuttingLevel++;
+        woodcuttingXP -= targetXP;
         targetXP = CalculateNextTargetXP();
-        Debug.Log("Level up! You are now level " + playerLevel);
+        Debug.Log("Level up! You are now level " + woodcuttingLevel);
     }
 
     int CalculateNextTargetXP()
