@@ -42,6 +42,8 @@ public class PlayerMovementAdvanced : MonoBehaviour
 
     Rigidbody rb;
 
+    public GameObject PausePanel;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -114,7 +116,14 @@ public class PlayerMovementAdvanced : MonoBehaviour
 
     private void FixedUpdate()
     {
-        MovePlayer();
+        if (PausePanel.activeInHierarchy)
+        {
+            Debug.Log("pausepanel");
+        }else
+        {
+            Debug.Log("nopausepanel");
+            MovePlayer();
+        }
     }
 
     private void MyInput()
