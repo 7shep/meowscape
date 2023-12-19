@@ -27,9 +27,9 @@ public class InteractableObject : MonoBehaviour
     public Transform focusTransform;
 
     Vector3 initialPosition; // Gets the objects position.
-    public GameObject respawnObject; // Assign the prefab in the Inspector
+   // public GameObject respawnObject; // Assign the prefab in the Inspector
     bool isActive = true;
-    public GameObject originalObject;
+    //public GameObject originalObject;
 
     public XPManager xpManager;
     public RespawnTree respawnTree;
@@ -133,7 +133,7 @@ public class InteractableObject : MonoBehaviour
         {
             //Debug.Log("Tree Damaged");
             ObjectHealth -= 10;
-            Debug.Log(ObjectHealth);
+            Debug.Log("Object Health: " + ObjectHealth);
 
             if (ObjectHealth <= 0)
             {

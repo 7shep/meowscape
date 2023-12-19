@@ -23,7 +23,7 @@ public class XPManager : MonoBehaviour
 
     public void GainXP(int xpAmount)
     {
-        Debug.Log(woodcuttingXP);
+        Debug.Log("XP: " + woodcuttingXP);
         woodcuttingXP += xpAmount;
     }
 

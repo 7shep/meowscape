@@ -182,7 +182,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemName: Mushroom
+  Description: 
+  ObjectHealth: 0
   radius: 3
+  interactionTransform: {fileID: 0}
+  interactableObject: {fileID: 0}
+  focusTransform: {fileID: 0}
+  xpManager: {fileID: 0}
+  respawnTree: {fileID: 0}
 --- !u!114 &15472303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1308,11 +1315,11 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1046988544}
+    m_TransformParent: {fileID: 1334178145}
     m_Modifications:
     - target: {fileID: 1972450619528280241, guid: 62f6191494f161340b448c5f6a7f56d8, type: 3}
       propertyPath: m_Name
-      value: PT_Fruit_Tree_01_green (2)
+      value: EGTree
       objectReference: {fileID: 0}
     - target: {fileID: 1972450619528280243, guid: 62f6191494f161340b448c5f6a7f56d8, type: 3}
       propertyPath: m_RootOrder
@@ -1320,7 +1327,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1972450619528280243, guid: 62f6191494f161340b448c5f6a7f56d8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.31
+      value: 9.310001
       objectReference: {fileID: 0}
     - target: {fileID: 1972450619528280243, guid: 62f6191494f161340b448c5f6a7f56d8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2068,7 +2075,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemName: Tree
+  Description: 
+  ObjectHealth: 0
   radius: 3
+  interactionTransform: {fileID: 0}
+  interactableObject: {fileID: 0}
+  focusTransform: {fileID: 0}
+  xpManager: {fileID: 0}
+  respawnTree: {fileID: 0}
 --- !u!1 &375577624
 GameObject:
   m_ObjectHideFlags: 0
@@ -2411,7 +2425,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 406809422}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.09252102, y: -0.000000017659854, z: 0.0000000016409462, w: 0.99571073}
+  m_LocalRotation: {x: 0.09252102, y: 0.00000001765986, z: -0.0000000016409466, w: 0.99571073}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3489,7 +3503,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemName: Tree
+  Description: 
+  ObjectHealth: 0
   radius: 3
+  interactionTransform: {fileID: 0}
+  interactableObject: {fileID: 0}
+  focusTransform: {fileID: 0}
+  xpManager: {fileID: 0}
+  respawnTree: {fileID: 0}
 --- !u!1 &762837747
 GameObject:
   m_ObjectHideFlags: 0
@@ -4002,7 +4023,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemName: Mushroom
+  Description: 
+  ObjectHealth: 0
   radius: 3
+  interactionTransform: {fileID: 0}
+  interactableObject: {fileID: 0}
+  focusTransform: {fileID: 0}
+  xpManager: {fileID: 0}
+  respawnTree: {fileID: 0}
 --- !u!114 &859375534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4038,7 +4066,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemName: Tree
+  Description: 
+  ObjectHealth: 0
   radius: 3
+  interactionTransform: {fileID: 0}
+  interactableObject: {fileID: 0}
+  focusTransform: {fileID: 0}
+  xpManager: {fileID: 0}
+  respawnTree: {fileID: 0}
 --- !u!1 &894822542
 GameObject:
   m_ObjectHideFlags: 0
@@ -4101,8 +4136,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05bc8024754727e4c85bb1d69b242df7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemName: Tree
+  ItemName: Evergrowing Tree
+  Description: infinite
+  ObjectHealth: 50
   radius: 3
+  interactionTransform: {fileID: 0}
+  interactableObject: {fileID: 921330946}
+  focusTransform: {fileID: 0}
+  xpManager: {fileID: 1604843886}
+  respawnTree: {fileID: 0}
 --- !u!64 &921330948
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5016,7 +5058,7 @@ Transform:
   m_Children:
   - {fileID: 751754980}
   - {fileID: 888019850}
-  - {fileID: 921330945}
+  - {fileID: 1334178145}
   m_Father: {fileID: 278716466}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1067362764
@@ -6164,7 +6206,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemName: Mushroom
+  Description: 
+  ObjectHealth: 0
   radius: 3
+  interactionTransform: {fileID: 0}
+  interactableObject: {fileID: 0}
+  focusTransform: {fileID: 0}
+  xpManager: {fileID: 0}
+  respawnTree: {fileID: 0}
 --- !u!114 &1291307157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6236,7 +6285,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemName: Mushroom
+  Description: 
+  ObjectHealth: 0
   radius: 3
+  interactionTransform: {fileID: 0}
+  interactableObject: {fileID: 0}
+  focusTransform: {fileID: 0}
+  xpManager: {fileID: 0}
+  respawnTree: {fileID: 0}
 --- !u!114 &1316790570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6249,6 +6305,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9902774eb2182f47b2101276d7dd652, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1334178144
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1334178145}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1334178145
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334178144}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 921330945}
+  m_Father: {fileID: 1046988544}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1385964666
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7827,6 +7915,7 @@ GameObject:
   - component: {fileID: 1604843881}
   - component: {fileID: 1604843884}
   - component: {fileID: 1604843885}
+  - component: {fileID: 1604843886}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -7871,6 +7960,7 @@ MonoBehaviour:
   jumpForce: 0
   jumpCooldown: 0
   airMultiplier: 0
+  interactableObject: {fileID: 0}
   walkSpeed: 0
   sprintSpeed: 0
   jumpKey: 32
@@ -7880,6 +7970,7 @@ MonoBehaviour:
     m_Bits: 137
   orientation: {fileID: 0}
   Camera: {fileID: 1236408729}
+  focus: {fileID: 0}
   PausePanel: {fileID: 330459329}
 --- !u!54 &1604843885
 Rigidbody:
@@ -7908,6 +7999,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &1604843886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1604843879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6244d123a39d2da4fadd2084dd7b1987, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetXP: 100
+  woodcuttingXP: 0
+  woodcuttingLevel: 1
+  explorationXP: 0
+  explorationLevel: 1
 --- !u!1 &1609810723
 GameObject:
   m_ObjectHideFlags: 0
@@ -9602,7 +9710,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemName: Mushroom
+  Description: 
+  ObjectHealth: 0
   radius: 3
+  interactionTransform: {fileID: 0}
+  interactableObject: {fileID: 0}
+  focusTransform: {fileID: 0}
+  xpManager: {fileID: 0}
+  respawnTree: {fileID: 0}
 --- !u!114 &2047735659
 MonoBehaviour:
   m_ObjectHideFlags: 0
