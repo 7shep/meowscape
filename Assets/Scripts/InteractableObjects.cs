@@ -32,12 +32,17 @@ public class InteractableObject : MonoBehaviour
     public GameObject originalObject;
 
     public XPManager xpManager;
+    public RespawnTree respawnTree;
 
 
     //meow
 
     private void Start()
     {
+        if (xpManager == null)
+        {
+            Debug.LogError("XPManager is not assigned to InteractableObject.");
+        }
         initialPosition = transform.position; // Store the initial position of the object
         //Instantiate(respawnObject);
     }
@@ -126,7 +131,7 @@ public class InteractableObject : MonoBehaviour
         // Now that we've ensured playerObject and its Description are not null, we can safely continue
         if (playerObject.Description == "infinite")
         {
-            Debug.Log("Tree Damaged");
+            //Debug.Log("Tree Damaged");
             ObjectHealth -= 10;
             Debug.Log(ObjectHealth);
 
@@ -139,8 +144,8 @@ public class InteractableObject : MonoBehaviour
                     return; // Exit the method if xpManager is null
                 }
 
-                xpManager.Instance.GainXP(35); // Call GainXP method
-                StartCoroutine(TestSeconds(1f));
+                xpManager.GainXP(35); // Call GainXP method
+                StartCoroutine(respawnTree.RespawnTreeWithDelay(3f, this.gameObject));
 
                 if (isActive)
                 {
@@ -155,32 +160,6 @@ public class InteractableObject : MonoBehaviour
         }
     }
 
-
-    IEnumerator DelayedDestroy(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        Destroy(originalObject);
-    }
-
-    // Within your existing coroutine
-    IEnumerator TestSeconds(float delay)
-    {
-        Debug.Log("Started");
-
-        //StartCoroutine(DelayedDestroy(2f));
-
-        Destroy(originalObject);
-
-        yield return new WaitForSeconds(delay);
-        
-        //Debug.Log("Middle");
-        Instantiate(respawnObject, transform.position, Quaternion.identity);
-        ObjectHealth = 100;
-        Debug.Log("Finished");
-
-        // Destroy the original object after the delay
-        //sStartCoroutine(DelayedDestroy(delay));
-    }
 
 
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.42226925, g: 0.6437075, b: 0.79366875, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -190,6 +190,8 @@ MonoBehaviour:
   focusTransform: {fileID: 0}
   respawnObject: {fileID: 0}
   originalObject: {fileID: 0}
+  xpManager: {fileID: 0}
+  respawnTree: {fileID: 0}
 --- !u!114 &15472303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1767,6 +1769,8 @@ MonoBehaviour:
   focusTransform: {fileID: 0}
   respawnObject: {fileID: 0}
   originalObject: {fileID: 0}
+  xpManager: {fileID: 0}
+  respawnTree: {fileID: 0}
 --- !u!1 &375577624
 GameObject:
   m_ObjectHideFlags: 0
@@ -2109,7 +2113,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 406809422}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.09252102, y: 0.00000001765986, z: -0.0000000016409466, w: 0.99571073}
+  m_LocalRotation: {x: 0.09252102, y: -0.000000017659854, z: 0.0000000016409462, w: 0.99571073}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3051,6 +3055,8 @@ MonoBehaviour:
   focusTransform: {fileID: 0}
   respawnObject: {fileID: 0}
   originalObject: {fileID: 0}
+  xpManager: {fileID: 0}
+  respawnTree: {fileID: 0}
 --- !u!1 &762837747
 GameObject:
   m_ObjectHideFlags: 0
@@ -3404,6 +3410,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &839511251
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 839511252}
+  m_Layer: 0
+  m_Name: TreeRespawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &839511252
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839511251}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 25.040043, y: 6.6493125, z: 74.41538}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &859375529 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2ec966d90911a454c9760fa28789a4f8, type: 3}
@@ -3435,6 +3472,8 @@ MonoBehaviour:
   focusTransform: {fileID: 0}
   respawnObject: {fileID: 0}
   originalObject: {fileID: 0}
+  xpManager: {fileID: 0}
+  respawnTree: {fileID: 0}
 --- !u!114 &859375534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3478,6 +3517,8 @@ MonoBehaviour:
   focusTransform: {fileID: 0}
   respawnObject: {fileID: 0}
   originalObject: {fileID: 0}
+  xpManager: {fileID: 0}
+  respawnTree: {fileID: 0}
 --- !u!1 &894822542
 GameObject:
   m_ObjectHideFlags: 0
@@ -5067,6 +5108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1203602379}
   - component: {fileID: 1203602380}
+  - component: {fileID: 1203602381}
   m_Layer: 0
   m_Name: EGTreeParent
   m_TagString: Untagged
@@ -5097,20 +5139,35 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1203602378}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05bc8024754727e4c85bb1d69b242df7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ItemName: EverGrowing Tree
   Description: infinite
-  ObjectHealth: 0
+  ObjectHealth: 10
   radius: 3
   interactionTransform: {fileID: 0}
   interactableObject: {fileID: 0}
   focusTransform: {fileID: 0}
   respawnObject: {fileID: 8036340053089793793, guid: caccd906eb55ff147bd85e111da909e7, type: 3}
   originalObject: {fileID: 921330944}
+  xpManager: {fileID: 1604843886}
+  respawnTree: {fileID: 0}
+--- !u!114 &1203602381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1203602378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 099aed4832a57244db6d6427ac65c954, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  treePrefab: {fileID: 921330944}
 --- !u!1 &1223992155 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1972450619686661696, guid: 62f6191494f161340b448c5f6a7f56d8, type: 3}
@@ -5619,6 +5676,8 @@ MonoBehaviour:
   focusTransform: {fileID: 0}
   respawnObject: {fileID: 0}
   originalObject: {fileID: 0}
+  xpManager: {fileID: 0}
+  respawnTree: {fileID: 0}
 --- !u!114 &1291307157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5698,6 +5757,8 @@ MonoBehaviour:
   focusTransform: {fileID: 0}
   respawnObject: {fileID: 0}
   originalObject: {fileID: 0}
+  xpManager: {fileID: 0}
+  respawnTree: {fileID: 0}
 --- !u!114 &1316790570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8891,6 +8952,8 @@ MonoBehaviour:
   focusTransform: {fileID: 0}
   respawnObject: {fileID: 0}
   originalObject: {fileID: 0}
+  xpManager: {fileID: 0}
+  respawnTree: {fileID: 0}
 --- !u!114 &2047735659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9818,6 +9881,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1203602379}
     m_Modifications:
+    - target: {fileID: 600475447334034654, guid: caccd906eb55ff147bd85e111da909e7, type: 3}
+      propertyPath: xpManager
+      value: 
+      objectReference: {fileID: 1604843886}
+    - target: {fileID: 600475447334034654, guid: caccd906eb55ff147bd85e111da909e7, type: 3}
+      propertyPath: respawnTree
+      value: 
+      objectReference: {fileID: 1203602381}
     - target: {fileID: 8036340053089793793, guid: caccd906eb55ff147bd85e111da909e7, type: 3}
       propertyPath: m_Name
       value: Evergrowing Tree
@@ -10984,3 +11055,4 @@ SceneRoots:
   - {fileID: 1435370491}
   - {fileID: 278716466}
   - {fileID: 768784803}
+  - {fileID: 839511252}
