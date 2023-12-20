@@ -33,7 +33,7 @@ public class ThirdPersonCam : MonoBehaviour
         Cursor.visible = false;
 
         // Add listener for when the value of the slider changes
-        rotationSpeedSlider.onValueChanged.AddListener(ChangeRotationSpeed);
+        //rotationSpeedSlider.onValueChanged.AddListener(ChangeRotationSpeed); //COMMENTED THIS OUT FOR PPR2 IF SOMETHING BREAKS ITS THIS
     }
 
     private void Update()

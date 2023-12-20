@@ -145,7 +145,7 @@ public class InteractableObject : MonoBehaviour
                 }
 
                 xpManager.GainXP(35); // Call GainXP method
-                StartCoroutine(respawnTree.RespawnTreeWithDelay(3f, this.gameObject));
+                //StartCoroutine(respawnTree.RespawnTreeWithDelay(3f, this.gameObject));
 
                 if (isActive)
                 {
