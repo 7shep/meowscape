@@ -3,7 +3,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.AI;
 using UnityEditor.Rendering;
-
+using System.Runtime.CompilerServices;
 
 public class InteractableObject : MonoBehaviour
 {
@@ -112,6 +112,21 @@ public class InteractableObject : MonoBehaviour
         }
     }
 
+    private void AddWoodToInventory()
+    {
+        Item woodItem = new Item();
+        woodItem.itemName = "Wood"; // Make sure this matches the field name in the Item class
+                                    // ... set the icon, etc.
+
+        if (!Inventory.instance.Add(woodItem))
+        {
+            Debug.Log("Failed to add Wood to Inventory");
+        }
+        else
+        {
+            Debug.Log("Wood added to Inventory");
+        }
+    }
     public void EverGrowingTree(InteractableObject playerObject)
     {
         // Check if the playerObject is null
@@ -145,6 +160,7 @@ public class InteractableObject : MonoBehaviour
                 }
 
                 xpManager.GainXP(35); // Call GainXP method
+                AddWoodToInventory();
                 //StartCoroutine(respawnTree.RespawnTreeWithDelay(3f, this.gameObject));
 
                 if (isActive)
@@ -158,6 +174,7 @@ public class InteractableObject : MonoBehaviour
         {
             Debug.Log("Item is not the EverGrowingTree!");
         }
+
     }
 
 
