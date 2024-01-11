@@ -10,6 +10,8 @@ public class InteractableObject : MonoBehaviour
     //Returns ItemName
     public string ItemName;
 
+    [SerializeField] private Sprite woodSprite; // Add this line
+
     //For Evergrowing Tree!
     public string Description;
     public int ObjectHealth;
@@ -36,9 +38,29 @@ public class InteractableObject : MonoBehaviour
 
 
     //meow
+    public static Inventory inventoryInstance;
+
+    private void Awake()
+    {
+        if (inventoryInstance == null)
+        {
+            inventoryInstance = FindObjectOfType<Inventory>();
+            if (inventoryInstance == null)
+            {
+                Debug.LogError("No Inventory instance found in the scene.");
+            }
+        }
+        else
+        {
+            Debug.LogError("Duplicate instance of Inventory found. Destroying this one.");
+            //Destroy(this.gameObject);
+        }
+    }
+
 
     private void Start()
     {
+
         if (xpManager == null)
         {
             Debug.LogError("XPManager is not assigned to InteractableObject.");
@@ -114,9 +136,11 @@ public class InteractableObject : MonoBehaviour
 
     private void AddWoodToInventory()
     {
-        Item woodItem = new Item();
-        woodItem.itemName = "Wood"; // Make sure this matches the field name in the Item class
-                                    // ... set the icon, etc.
+        Item woodItem = new Item
+        {
+            itemName = "Wood",
+            icon = woodSprite // This should be a Sprite object already loaded in your resources
+        };
 
         if (!Inventory.instance.Add(woodItem))
         {
@@ -127,6 +151,7 @@ public class InteractableObject : MonoBehaviour
             Debug.Log("Wood added to Inventory");
         }
     }
+
     public void EverGrowingTree(InteractableObject playerObject)
     {
         // Check if the playerObject is null
@@ -161,6 +186,7 @@ public class InteractableObject : MonoBehaviour
 
                 xpManager.GainXP(35); // Call GainXP method
                 AddWoodToInventory();
+                Debug.Log("Adding Wood");
                 //StartCoroutine(respawnTree.RespawnTreeWithDelay(3f, this.gameObject));
 
                 if (isActive)

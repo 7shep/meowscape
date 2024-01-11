@@ -16,7 +16,6 @@ public class XPManager : MonoBehaviour
     [Space]
     [Header("Level Up")]
     public TMP_Text levelupText;
-
     private void Start()
     {
         HideLevelUpText();

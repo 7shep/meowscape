@@ -10,15 +10,15 @@ public class InventorySlot : MonoBehaviour
     {
         icon.sprite = newItem.icon;
         icon.enabled = true;
-        if (itemName != null)
-            itemName.text = newItem.itemName;
+        //itemName.text = newItem.itemName; // Assuming itemName is a Text or TMPro.TextMeshProUGUI component.
     }
+
 
     public void ClearSlot()
     {
         icon.sprite = null;
         icon.enabled = false;
-        if (itemName != null)
-            itemName.text = "";
+        //itemName.text = "";
     }
+
 }

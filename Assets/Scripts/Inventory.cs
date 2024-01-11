@@ -26,31 +26,29 @@ public class Inventory : MonoBehaviour
     }
 
     // Update the inventory UI by adding/removing items
+    // Update the inventory UI by adding/removing items
     private void UpdateInventoryUI()
     {
-        // Assuming you have 16 slots, 4x4 in your UI panel
-        for (int i = 0; i < 16; i++)
-        {
-            // Find the specific slot in the UI
-            Transform slotTransform = inventoryPanel.transform.GetChild(i);
-            Image image = slotTransform.GetComponentInChildren<Image>(true);
-            Text text = slotTransform.GetComponentInChildren<Text>(true);
+        Debug.Log("Updating Inventory UI");
 
-            // If there's an item at this slot index, update the UI accordingly
+        int childCount = inventoryPanel.transform.childCount; // Get the actual number of children
+
+        for (int i = 0; i < inventoryPanel.transform.childCount; i++)
+        {
+            InventorySlot slot = inventoryPanel.transform.GetChild(i).GetComponent<InventorySlot>();
             if (i < items.Count)
             {
-                image.sprite = items[i].icon;
-                image.enabled = true; // Enable the image component if it's disabled
-                text.text = items[i].itemName;
+                slot.AddItem(items[i]);
             }
             else
             {
-                // If there's no item, disable the image component and clear the text
-                image.enabled = false;
-                text.text = "";
+                slot.ClearSlot();
             }
         }
     }
+
+
+
 
     // Call this method to add an item to the inventory
     public bool Add(Item item)
@@ -61,10 +59,12 @@ public class Inventory : MonoBehaviour
             return false;
         }
 
+        Debug.Log($"Adding item: {item.itemName}");
         items.Add(item);
         UpdateInventoryUI();
         return true;
     }
+
 
     // Call this method to remove an item from the inventory
     public void Remove(Item item)
