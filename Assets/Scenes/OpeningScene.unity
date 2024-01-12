@@ -182,6 +182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemName: Mushroom
+  woodSprite: {fileID: 0}
   Description: 
   ObjectHealth: 0
   radius: 3
@@ -2237,6 +2238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemName: Tree
+  woodSprite: {fileID: 0}
   Description: 
   ObjectHealth: 0
   radius: 3
@@ -3861,6 +3863,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemName: Tree
+  woodSprite: {fileID: 0}
   Description: 
   ObjectHealth: 0
   radius: 3
@@ -4399,6 +4402,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemName: Mushroom
+  woodSprite: {fileID: 0}
   Description: 
   ObjectHealth: 0
   radius: 3
@@ -4442,6 +4446,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemName: Tree
+  woodSprite: {fileID: 0}
   Description: 
   ObjectHealth: 0
   radius: 3
@@ -4513,6 +4518,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemName: Evergrowing Tree
+  woodSprite: {fileID: 0}
   Description: infinite
   ObjectHealth: 50
   radius: 3
@@ -6241,7 +6247,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1236408725}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.04763198, y: 0.0000000021483566, z: -1.02446746e-10, w: 0.99886495}
+  m_LocalRotation: {x: 0.04763198, y: -0.0000000021483566, z: 1.02446746e-10, w: 0.99886495}
   m_LocalPosition: {x: -129.92162, y: -4.8078003, z: 169.07147}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6612,6 +6618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemName: Mushroom
+  woodSprite: {fileID: 0}
   Description: 
   ObjectHealth: 0
   radius: 3
@@ -6691,6 +6698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemName: Mushroom
+  woodSprite: {fileID: 0}
   Description: 
   ObjectHealth: 0
   radius: 3
@@ -8385,6 +8393,7 @@ GameObject:
   - component: {fileID: 1604843884}
   - component: {fileID: 1604843885}
   - component: {fileID: 1604843886}
+  - component: {fileID: 1604843887}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -8486,6 +8495,27 @@ MonoBehaviour:
   explorationXP: 0
   explorationLevel: 1
   levelupText: {fileID: 639892399}
+--- !u!95 &1604843887
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1604843879}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c9995d71979508741a20f884f2f434a3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1609810723
 GameObject:
   m_ObjectHideFlags: 0
@@ -8867,7 +8897,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1660981448}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.047631975, y: 0.0000000021483564, z: -1.02446746e-10, w: 0.99886495}
+  m_LocalRotation: {x: 0.047631975, y: -0.0000000021483564, z: 1.02446746e-10, w: 0.99886495}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10225,6 +10255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemName: Mushroom
+  woodSprite: {fileID: 0}
   Description: 
   ObjectHealth: 0
   radius: 3
