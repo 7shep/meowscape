@@ -47,7 +47,7 @@ public class XPManager : MonoBehaviour
 
     int CalculateNextTargetXP()
     {
-        return Mathf.FloorToInt(targetXP * 4.0f); // Every time you level up the next level requires 4 times the amount of XP.
+        return Mathf.FloorToInt(targetXP * 1.33f); // Every time you level up the next level requires 4 times the amount of XP.
     }
 
     void HideLevelUpText()
