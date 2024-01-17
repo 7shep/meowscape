@@ -15,6 +15,7 @@ public class InteractableObject : MonoBehaviour
     //For Evergrowing Tree!
     public string Description;
     public int ObjectHealth;
+    public string description;
 
     public float radius = 3f;
     public Transform interactionTransform;
